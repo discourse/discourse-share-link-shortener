@@ -41,7 +41,7 @@ export default class ShortShareLink extends Component {
   }
 
   get postSegment() {
-    return this.args.post.post_number > 1
+    return this.args.post?.post_number > 1
       ? `/${this.args.post.post_number}`
       : "";
   }
