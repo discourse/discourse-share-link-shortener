@@ -2,7 +2,7 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
-import { getAbsoluteURL } from "discourse-common/lib/get-url";
+import { getAbsoluteURL } from "discourse/lib/get-url";
 
 export default class ShortShareLink extends Component {
   @service site;
