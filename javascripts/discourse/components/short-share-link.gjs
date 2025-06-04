@@ -1,8 +1,11 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
+import { on } from "@ember/modifier";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
+import DToggleSwitch from "discourse/components/d-toggle-switch";
 import { getAbsoluteURL } from "discourse/lib/get-url";
+import { i18n } from "discourse-i18n";
 
 export default class ShortShareLink extends Component {
   @service site;
@@ -83,4 +86,16 @@ export default class ShortShareLink extends Component {
       localStorage.removeItem("short-share-link");
     }
   }
+
+  <template>
+    <DToggleSwitch
+      class="btn-link-length"
+      @state={{this.isShortened}}
+      @translatedLabel={{i18n (themePrefix "short_link_label")}}
+      {{on
+        "click"
+        (if this.isShortened (action "lengthenLink") (action "shortenLink"))
+      }}
+    />
+  </template>
 }

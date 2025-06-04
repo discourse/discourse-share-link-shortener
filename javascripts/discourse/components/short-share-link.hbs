@@ -1,9 +1,0 @@
-<DToggleSwitch
-  class="btn-link-length"
-  @state={{this.isShortened}}
-  @translatedLabel={{theme-i18n "short_link_label"}}
-  {{on
-    "click"
-    (if this.isShortened (action "lengthenLink") (action "shortenLink"))
-  }}
-/>
