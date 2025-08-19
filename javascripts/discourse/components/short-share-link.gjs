@@ -92,10 +92,7 @@ export default class ShortShareLink extends Component {
       class="btn-link-length"
       @state={{this.isShortened}}
       @translatedLabel={{i18n (themePrefix "short_link_label")}}
-      {{on
-        "click"
-        (if this.isShortened (action "lengthenLink") (action "shortenLink"))
-      }}
+      {{on "click" (if this.isShortened this.lengthenLink this.shortenLink)}}
     />
   </template>
 }
