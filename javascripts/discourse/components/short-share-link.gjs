@@ -9,7 +9,6 @@ import { i18n } from "discourse-i18n";
 
 export default class ShortShareLink extends Component {
   @service site;
-  @service router;
   @service currentUser;
 
   @tracked isShortened = false;
